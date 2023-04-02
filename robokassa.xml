@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="library" method="upgrade" version="4.2">
+	<name>NorrNext Robokassa Library</name>
+	<libraryname>NorrNext/Robokassa</libraryname>
+	<creationDate>02/04/2023</creationDate>
+	<author>Dmitrijs Rekuns</author>
+	<authorEmail>support@norrnext.com</authorEmail>
+	<authorUrl>https://norrnext.com</authorUrl>
+	<copyright>(C) 2023 NorrNext. All rights reserved.</copyright>
+	<license>GNU General Public License version 3 or later; see LICENSE</license>
+	<version>1.0.0</version>
+	<description>A simple interface library for Joomla that includes Robokassa methods.</description>
+	<namespace path="src">NorrNext\Robokassa</namespace>
+	<files>
+		<folder>src</folder>
+	</files>
+	<updateservers>
+		<server
+			type="extension"
+			priority="1"
+			name="NorrNext - Robokassa Library">
+			https://raw.githubusercontent.com/NorrNext/lib-robokassa/master/update_manifest.xml
+		</server>
+	</updateservers>
+</extension>
