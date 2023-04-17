@@ -98,9 +98,12 @@ class Robokassa
 	 */
 	public function getCallbackSignature(string $type, string $amount, int $invoiceId, array $shopData = null): string
 	{
-		if ($type != 'result' && $type != 'success')
+		$type = strtolower($type);
+		$allowedTypes = ['result', 'success'];
+
+		if (!in_array($type, $allowedTypes))
 		{
-			throw new InvalidArgumentException;
+			throw new InvalidArgumentException('Allowed types: ' . implode(', ', $allowedTypes));
 		}
 
 		$password = '';
