@@ -36,12 +36,12 @@ class Robokassa
 	const PATH_OPSTATE = '/OpStateExt';
 
 	/**
-	 * XML interface URL.
+	 * XML interface path.
 	 *
 	 * @var    string
-	 * @since  1.0
+	 * @since  1.1
 	 */
-	const URL_XML = 'https://auth.robokassa.ru/Merchant/WebService/Service.asmx';
+	const PATH_XML = '/Merchant/WebService/Service.asmx';
 
 	/**
 	 * Hashing algorithm.
@@ -149,8 +149,8 @@ class Robokassa
 			. self::DELIMITER . $invoiceId
 			. self::DELIMITER . $this->getPassword2();
 
-		$url = self::URL_XML . self::PATH_OPSTATE . '?'
-			. 'MerchantLogin=' . $this->getShopId()
+		$url = $this->interfaceUrl . self::PATH_XML . self::PATH_OPSTATE
+			. '?MerchantLogin=' . $this->getShopId()
 			. '&InvoiceID=' . $invoiceId
 			. '&Signature=' . hash($this->getHashingAlgorithm(), $signature);
 
