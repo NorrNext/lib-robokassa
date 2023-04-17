@@ -19,7 +19,7 @@
 			type="extension"
 			priority="1"
 			name="NorrNext - Robokassa Library">
-			https://raw.githubusercontent.com/NorrNext/lib-robokassa/master/update_manifest.xml
+			https://raw.githubusercontent.com/NorrNext/lib-robokassa/main/update_manifest.xml
 		</server>
 	</updateservers>
 </extension>
