@@ -76,6 +76,14 @@ class Robokassa
 	protected string $shopId;
 
 	/**
+	 * Interface URL.
+	 *
+	 * @var    string
+	 * @since  1.1
+	 */
+	private string $interfaceUrl = 'https://auth.robokassa.ru';
+
+	/**
 	 * Gets the signature for callback requests.
 	 *
 	 * @param   string   $type       Signature type: success or result
@@ -199,6 +207,32 @@ class Robokassa
 		}
 
 		return hash($this->getHashingAlgorithm(), $signature);
+	}
+
+	/**
+	 * Sets the country for internal use.
+	 * For example is used in the interface URL.
+	 *
+	 * @param   string  $country  Country code.
+	 *
+	 * @return  $this
+	 *
+	 * @since   1.1
+	 * @throws  InvalidArgumentException
+	 */
+	public function setCountry(string $country): Robokassa
+	{
+		$country = strtolower($country);
+		$allowedCountries = ['kz', 'ru'];
+
+		if (!in_array($country, $allowedCountries))
+		{
+			throw new InvalidArgumentException('Allowed countries: ' . implode(', ', $allowedCountries));
+		}
+
+		$this->interfaceUrl = 'https://auth.robokassa.' . $country;
+
+		return $this;
 	}
 
 	/**
