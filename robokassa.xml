@@ -8,7 +8,7 @@
 	<authorUrl>https://norrnext.com</authorUrl>
 	<copyright>(C) 2023 NorrNext. All rights reserved.</copyright>
 	<license>GNU General Public License version 3 or later; see LICENSE</license>
-	<version>1.1.0</version>
+	<version>1.1.1</version>
 	<description>A simple interface library for Joomla that includes Robokassa methods.</description>
 	<namespace path="src">NorrNext\Robokassa</namespace>
 	<files>
