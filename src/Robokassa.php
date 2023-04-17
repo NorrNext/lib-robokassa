@@ -119,7 +119,7 @@ class Robokassa
 				$data .= self::DELIMITER . $key . '=' . $value;
 			}
 
-			$signature .= substr($data, 0, 2048);
+			$signature .= mb_substr($data, 0, 2048);
 		}
 
 		return strtoupper(hash($this->getHashingAlgorithm(), $signature));
@@ -195,7 +195,7 @@ class Robokassa
 				$data .= self::DELIMITER . $key . '=' . $value;
 			}
 
-			$signature .= substr($data, 0, 2048);
+			$signature .= mb_substr($data, 0, 2048);
 		}
 
 		return hash($this->getHashingAlgorithm(), $signature);
