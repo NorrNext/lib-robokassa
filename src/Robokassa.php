@@ -181,7 +181,7 @@ class Robokassa
 
 		if (!empty($receipt))
 		{
-			$signature .= self::DELIMITER . urlencode(json_encode($receipt));
+			$signature .= self::DELIMITER . urlencode(json_encode($receipt, JSON_UNESCAPED_UNICODE));
 		}
 
 		$signature .= self::DELIMITER . $this->getPassword1();
