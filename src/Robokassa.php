@@ -92,8 +92,8 @@ class Robokassa
 	 * @param   ?array   $shopData   Additional custom parameters.
 	 *
 	 * @return  string
-	 * @throws  InvalidArgumentException
 	 *
+	 * @throws  InvalidArgumentException
 	 * @since   1.0
 	 */
 	public function getCallbackSignature(string $type, string $amount, int $invoiceId, array $shopData = null): string
@@ -141,10 +141,10 @@ class Robokassa
 	 *
 	 * @param   int  $invoiceId  Invoice Id.
 	 *
-	 * @return  SimpleXMLElement  SimpleXMLElement on success or false on error
+	 * @return  SimpleXMLElement
 	 *
-	 * @since   1.0
 	 * @throws  Exception
+	 * @since   1.0
 	 */
 	public function getOperationState(int $invoiceId): SimpleXMLElement
 	{
@@ -220,8 +220,8 @@ class Robokassa
 	 *
 	 * @return  $this
 	 *
-	 * @since   1.1
 	 * @throws  InvalidArgumentException
+	 * @since   1.1
 	 */
 	public function setCountry(string $country): Robokassa
 	{
@@ -349,10 +349,10 @@ class Robokassa
 	 * @param   int      $options  Optionally used to specify additional Libxml parameters.
 	 * @param   boolean  $isUrl    True to load a file or URL false to load a string.
 	 *
-	 * @return  SimpleXMLElement  SimpleXMLElement on success or false on error
+	 * @return  SimpleXMLElement
 	 *
-	 * @since   1.0
 	 * @throws  Exception
+	 * @since   1.0
 	 */
 	protected function getXML(string $data, int $options = 0, bool $isUrl = true): SimpleXMLElement
 	{
